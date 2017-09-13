@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    li {
+      list-style: none;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .site {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 1fr 3fr auto auto auto;
+      grid-template-areas:
+        "logo . nav"
+        "header header header"
+        "main main main"
+        "footer footer footer";
+    }
+
+    .logo {
+      grid-area: logo;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 100px;
+    }
+
+    .masthead {
+      grid-area: header;
+      background-image: url(img/clouds.jpg);
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main {
+      grid-area: main;
+      padding: 30px;
+    }
+
+    footer {
+      grid-area: footer;
+      padding: 30px;
+    }
+
+    nav {
+      grid-area: nav;
+    }
+
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    nav li {
+      flex: 1;
+    }
+
+    nav a {
+      color: black;
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+      position: relative;
+      outline: none;
+      text-align: right;
+    }
+
+    nav a:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.6);
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    nav a:hover:before,
+    nav a:focus:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+
+    .message {
+      grid-area: message;
+      text-align: center;
+      padding: 30px 20px 0;
+    }
+
+    .message h1 {
+      color: white;
+      font-size: 50px;
+      text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+      margin-bottom: 10px;
+    }
+
+    .flat {
+      display: inline-block;
+      padding: 10px 30px;
+      font-size: 20px;
+      line-height: 1.8;
+      vertical-align: bottom;
+      appearance: none;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .flat {
+      color: #fff;
+      background-color: #6496c8;
+      text-shadow: -1px 1px #417cb8;
+      border: none;
+    }
+
+    .flat:hover,
+    .flat.hover {
+      background-color: #346392;
+      text-shadow: -1px 1px #27496d;
+    }
+
+    .flat:active,
+    .flat.active {
+      background-color: #27496d;
+      text-shadow: -1px 1px #193047;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+
+    @media screen and (min-width: 50em) {
+      .site {
+        grid-template-areas:
+          ". logo ."
+          "header header header"
+          "main main main"
+          "footer footer footer";
+      }
+
+      nav {
+        grid-area: header;
+        position: relative;
+      }
+
+      nav ul {
+        flex-direction: row;
+      }
+
+      nav a {
+        text-align: center;
+        color: white;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <div class="logo">
+      <img src="http://logo.pizza/img/trefoil/trefoil.png" alt="logo">
+    </div>
+
+    <nav role="main">
+      <ul>
+        <li><a href="#">My Process</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Request Quote</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="masthead">
+      <div class="message">
+        <h1>Help Pay Andy's Mortgage</h1>
+        <button class="flat">Find Out More</button>
+      </div>
+    </div>
+
+    <main>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sint ex totam quis quaerat dolor, animi, voluptatibus eaque expedita minima nulla atque, at numquam excepturi, aliquam aperiam. At, non, quo.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sint ex totam quis quaerat dolor, animi, voluptatibus eaque expedita minima nulla atque, at numquam excepturi, aliquam aperiam. At, non, quo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sint ex totam quis quaerat dolor, animi, voluptatibus eaque expedita minima nulla atque, at numquam excepturi, aliquam aperiam. At, non, quo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sint ex totam quis quaerat dolor, animi, voluptatibus eaque expedita minima nulla atque, at numquam excepturi, aliquam aperiam. At, non, quo.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sint ex totam quis quaerat dolor, animi, voluptatibus eaque expedita minima nulla atque, at numquam excepturi, aliquam aperiam. At, non, quo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sint ex totam quis quaerat dolor, animi, voluptatibus eaque expedita minima nulla atque, at numquam excepturi, aliquam aperiam. At, non, quo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sint ex totam quis quaerat dolor, animi, voluptatibus eaque expedita minima nulla atque, at numquam excepturi, aliquam aperiam. At, non, quo.</p>
+    </main>
+    <footer>© 2017 Cumulus Bookkeeping, LLC</footer>
+  </div>
+</body>
+</html>
