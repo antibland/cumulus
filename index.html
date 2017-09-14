@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
   <title></title>
   <style>
     * {
@@ -25,7 +26,7 @@
     .site {
       display: grid;
       grid-template-columns: auto;
-      grid-template-rows: 1fr 3fr auto auto auto;
+      grid-template-rows: 1fr 2.5fr auto auto auto;
       grid-template-areas:
         "logo . nav"
         "header header header"
@@ -39,10 +40,12 @@
       grid-area: logo;
       display: flex;
       align-items: center;
+      background: #7dd8e1;
+      padding: 2em 1em;
     }
 
     .logo img {
-      width: 100px;
+      width: 150px;
     }
 
     .masthead {
@@ -73,6 +76,7 @@
     nav ul {
       display: flex;
       flex-direction: column;
+      height: 100%;
       background-color: rgba(255, 255, 255, 0.3);
     }
 
@@ -163,11 +167,20 @@
     @media screen and (min-width: 50em) {
       .site {
         grid-template-areas:
-          ". logo ."
+          "logo logo logo"
           "header header header"
           "main main main"
           "footer footer footer";
-        grid-template-rows: 1fr 5fr auto auto auto;
+        grid-template-rows: 1fr 4fr auto auto auto;
+      }
+
+      .logo {
+        padding: 1em 0;
+      }
+
+      .logo img {
+        width: 125px;
+        margin: 0 auto;
       }
 
       nav {
@@ -177,6 +190,8 @@
 
       nav ul {
         flex-direction: row;
+        height: auto;
+        border-top: 1px solid rgba(0, 0, 0, 0.5);
       }
 
       nav a {
@@ -189,7 +204,7 @@
 <body>
   <div class="site">
     <div class="logo">
-      <img src="http://logo.pizza/img/trefoil/trefoil.png" alt="logo">
+      <img src="img/logo.png" alt="logo">
     </div>
 
     <nav role="main">
