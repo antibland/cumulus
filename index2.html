@@ -76,8 +76,6 @@
       background-position: 0 0;
       background-size: cover;
       height: 100vh;
-      max-width: 1100px;
-      margin: 0 auto;
       padding: 30px 15px;
       display: flex;
       flex-direction: column;
@@ -186,6 +184,11 @@
         padding: 0 20px;
       }
 
+      main, footer, .masthead {
+        margin: 0 auto;
+        max-width: 1110px;
+      }
+
       main {
         display: grid;
         grid-column-gap: 50px;
@@ -194,8 +197,6 @@
         grid-template-areas:
           "long-message long-message"
           "about action";
-        margin: 0 auto;
-        max-width: 1110px;
       }
 
       main > section {
