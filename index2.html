@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <title></title>
+  <style>
+    @keyframes fade-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    * > :last-child { margin-bottom: 0 !important; margin-right: 0 !important; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.5;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 50px;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      color: #6496c8;
+      font-size: 24px;
+    }
+
+    a:link,
+    a:visited {
+      text-decoration: none;
+    }
+
+    main a {
+      color: #172A3A;
+      font-weight: bold;
+      border-bottom: 1px dashed #172A3A;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 150px;
+    }
+
+    .masthead {
+      background-image: url(img/clouds.jpg);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+      height: 100vh;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 15px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    [role='main'] ul {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      display: block;
+      padding: 5px 0;
+    }
+
+    .nav-item:last-child .nav-link {
+      padding-right: 0;
+    }
+
+    .message {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .message h1 {
+      color: white;
+      text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: 0.8s fade-in forwards;
+    }
+
+    .flat {
+      display: inline-block;
+      padding: 10px 30px;
+      font-size: 20px;
+      line-height: 1.8;
+      vertical-align: bottom;
+      appearance: none;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .flat {
+      color: #fff;
+      background-color: #6496c8;
+      text-shadow: -1px 1px #417cb8;
+      border: none;
+    }
+
+    .flat:hover,
+    .flat.hover {
+      background-color: #346392;
+      text-shadow: -1px 1px #27496d;
+    }
+
+    .flat:active,
+    .flat.active {
+      background-color: #27496d;
+      text-shadow: -1px 1px #193047;
+    }
+
+    main {
+      display: grid;
+      grid-row-gap: 24px;
+      padding: 60px 30px;
+      grid-template-areas:
+        "long-message"
+        "about"
+        "action";
+    }
+
+    main > section {
+      margin-bottom: 30px;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 50em) {
+      body {
+        margin: 0 auto;
+      }
+
+      [role='main'] {
+        flex: 1;
+      }
+
+      [role='main'] ul {
+        justify-content: flex-end;
+        flex-direction: row;
+      }
+
+      .nav-link {
+        padding: 0 20px;
+      }
+
+      main {
+        display: grid;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+        padding: 90px;
+        grid-template-areas:
+          "long-message long-message"
+          "about action";
+      }
+
+      main > section {
+        margin-bottom: 0;
+      }
+
+      .about {
+        grid-area: about;
+      }
+
+      .action {
+        grid-area: action;
+      }
+
+      .long-message {
+        grid-area: long-message;
+      }
+
+      .masthead {
+        padding: 30px;
+      }
+
+      footer {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="masthead">
+
+    <header>
+      <div class="logo">
+        <img src="img/logo@2x.png" alt="logo">
+      </div>
+
+      <nav role="main">
+        <ul>
+          <li class="nav-item"><a class="nav-link" href="#">My Process</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Request Quote</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="message">
+      <h1>Help Pay Andy's Mortgage</h1>
+      <button class="flat">Find Out More</button>
+    </div>
+
+  </section>
+
+  <main>
+    <section class="long-message">
+      <h2>We make a difference by configuring the innovation of tomorrow.</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sint ex totam quis quaerat dolor, animi, voluptatibus eaque expedita minima nulla atque, at numquam excepturi, aliquam aperiam. At, non, quo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sint ex totam quis quaerat dolor, animi, voluptatibus eaque expedita minima nulla atque, at numquam excepturi, aliquam aperiam. At, non, quo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sint ex totam quis quaerat dolor, animi, voluptatibus eaque expedita minima nulla atque, at numquam excepturi, aliquam aperiam. At, non, quo.</p>
+    </section>
+
+    <section class="about">
+      <h3>About</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta eligendi asperiores dignissimos, facilis! Voluptatem ratione rem reiciendis animi sit, ipsum nam, beatae quam vitae, praesentium dolor officiis eaque, odit nisi.</p>
+      <a href="#">Find out more</a>
+    </section>
+
+    <section class="action">
+      <h3>Action</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta eligendi asperiores dignissimos, facilis! Voluptatem ratione rem reiciendis animi sit, ipsum nam, beatae quam vitae, praesentium dolor officiis eaque, odit nisi.</p>
+      <a href="#">Find out more</a>
+    </section>
+  </main>
+
+  <footer>© 2017 Cumulus Bookkeeping, LLC</footer>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
