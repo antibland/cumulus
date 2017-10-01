@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cumulus Bookkeeping Solutions | Digital, Cloud-based Services</title>
   <link rel="stylesheet" href="prod/style.css">
@@ -13,7 +12,11 @@
 
     <header>
       <div class="logo">
-        <img src="img/logo@2x.png" alt="logo">
+        <img srcset="
+          img/logo.png 1x,
+          img/logo@2x.png 2x,
+          img/logo@3x.png 3x
+        " alt="Cumulus logo">
       </div>
 
       <nav role="main">
@@ -55,15 +58,26 @@
 
   <footer>© 2017 Cumulus Bookkeeping, LLC</footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
   <script>
    WebFont.load({
       google: {
         families: ['Montserrat', 'Josefin+Sans:300']
       }
     });
-  </script>
 
-  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+   (function canUseWebP() {
+    var elem = document.createElement('canvas');
+
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+      if (elem.toDataURL('image/webp').indexOf('data:image/webp') == 0) {
+        document.body.classList.add('webp')
+      }
+    }
+    else {
+      document.body.classList.add('no-webp')
+    }
+   })();
+  </script>
 </body>
 </html>
