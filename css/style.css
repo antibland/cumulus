@@ -199,13 +199,8 @@ header {
 }
 
 main {
-  display: grid;
-  grid-row-gap: 24px;
   padding: 60px 30px;
-  grid-template-areas:
-    "long-message"
-    "about"
-    "action";
+  max-width: 132vmin;
 }
 
 main > section {
@@ -243,19 +238,14 @@ footer {
     padding: 0 20px;
   }
 
-  main, footer, .masthead {
+  footer, .masthead {
     margin: 0 auto;
     max-width: 1110px;
   }
 
   main {
-    display: grid;
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
+    margin: 0 auto;
     padding: 90px;
-    grid-template-areas:
-      "long-message long-message"
-      "about action";
   }
 
   main > section {
