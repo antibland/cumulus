@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-symbols">
+  <defs>
+    <symbol viewBox="0 0 50 50" id="svg-checkmark">
+      <circle fill="currentColor" cx="25" cy="25" r="25"/>
+      <polyline id="svg-checkmark--check" style="fill:none;stroke:#FFFFFF;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="
+        38,15 22,33 12,25 "/>
+    </symbol>
+  </defs>
+</svg>
