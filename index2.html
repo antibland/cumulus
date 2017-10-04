@@ -103,24 +103,28 @@
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
   <script>
-   WebFont.load({
+    WebFont.load({
       google: {
         families: ['Montserrat', 'Josefin+Sans:300']
       }
     });
 
-   (function canUseWebP() {
-    var elem = document.createElement('canvas');
+    (function() {
+      function testWebP(callback) {
+        var webP = new Image();
+        webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+        webP.onload = webP.onerror = function () {
+          callback(webP.height === 2);
+        };
+      };
 
-    if (!!(elem.getContext && elem.getContext('2d'))) {
-      if (elem.toDataURL('image/webp').indexOf('data:image/webp') == 0) {
-        document.body.classList.add('webp')
+      function notify(supported) {
+        (supported) ? document.body.classList.add('webp') : document.body.classList.add('no-webp');
       }
-    }
-    else {
-      document.body.classList.add('no-webp')
-    }
-   })();
-  </script>
+
+      testWebP(notify);
+    })();
+
+</script>
 </body>
 </html>

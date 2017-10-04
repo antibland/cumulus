@@ -39,6 +39,10 @@ li {
   width: 1px !important;
 }
 
+svg {
+  fill: currentColor;
+}
+
 .checkmark {
   color: var(--green);
   width: 1.3em;
@@ -48,9 +52,6 @@ li {
   top: .1em;
 }
 
-svg {
-  fill: currentColor;
-}
 
 p, main li {
   margin-bottom: 20px;
