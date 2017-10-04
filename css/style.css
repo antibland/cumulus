@@ -202,7 +202,7 @@ header {
 
 main {
   padding: 60px 30px;
-  max-width: 132vmin;
+  max-width: 150vmin;
 }
 
 main > section {
@@ -213,6 +213,16 @@ footer {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 30px;
   text-align: center;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+footer .badges {
+  padding-bottom: 1em;
+}
+
+footer p {
+  margin-bottom: 0;
 }
 
 @media screen and (min-width: 55em) {
@@ -240,9 +250,13 @@ footer {
     padding: 0 20px;
   }
 
-  footer, .masthead {
+  .masthead {
     margin: 0 auto;
     max-width: 1110px;
+  }
+
+  footer {
+    max-width: 2000px;
   }
 
   main {
@@ -271,8 +285,14 @@ footer {
   }
 
   footer {
-    text-align: left;
+    flex-direction: row;
     padding: 30px 90px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .badges {
+    padding-bottom: 0;
   }
 }
 
