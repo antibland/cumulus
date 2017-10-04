@@ -52,6 +52,19 @@ main a {
   border-bottom: 1px dashed #172A3A;
 }
 
+main ul {
+  padding-left: 1em;
+}
+
+main li {
+  list-style: square;
+  padding-bottom: 1em;
+}
+
+main h2:not(:first-child) {
+  padding-top: 1.5em;
+}
+
 header {
   display: flex;
   justify-content: space-between;
