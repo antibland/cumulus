@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cumulus Bookkeeping Solutions | Digital, Cloud-based Services</title>
+  <link rel="stylesheet" href="prod/style.css">
+</head>
+
+<body>
+  <section class="masthead">
+
+    <header>
+      <a class="logo" href="/">
+        <img srcset="
+          img/logo.png 1x,
+          img/logo@2x.png 2x,
+          img/logo@3x.png 3x
+        " alt="Cumulus logo">
+      </a>
+
+      <nav role="main">
+        <ul>
+          <li class="nav-item"><a class="nav-link" href="#">My Process</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Request Quote</a></li>
+          <li class="nav-item active"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  </section>
+
+  <main>
+    <div class="flash-message" id="thanks">
+      Message sent. I'll get back to you shortly.
+    </div>
+
+    <h2>Contact Me</h2>
+
+    <form method="POST" action="//formspree.io/laura.gershman1@gmail.com">
+      <input aria-label="your email" required autocapitalize="none" type="email" name="email" placeholder="Email">
+      <textarea aria-label="your message" required name="message" placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+      <input type="hidden" name="_next" value="/contact.html#thanks">
+    </form>
+
+  </main>
+
+  <footer>
+    <p>© 2017 Cumulus Bookkeeping, LLC</p>
+    <div class="badges">
+      <img srcset="
+        /img/quickbooks_badge.jpg 1x,
+        /img/quickbooks_badge@2x.jpg 2x
+      " alt="Quickbooks badge">
+    </div>
+  </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Montserrat', 'Josefin+Sans:300']
+      }
+    });
+
+    (function() {
+      function testWebP(callback) {
+        var webP = new Image();
+        webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+        webP.onload = webP.onerror = function () {
+          callback(webP.height === 2);
+        };
+      };
+
+      function notify(supported) {
+        (supported) ? document.body.classList.add('webp') : document.body.classList.add('no-webp');
+      }
+
+      testWebP(notify);
+    })();
+  </script>
+</body>
+</html>

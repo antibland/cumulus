@@ -8,6 +8,7 @@
 :root {
   --black: #353535;
   --green: #6496c8;
+  --border-radius: 4px;
 }
 
 * {
@@ -96,7 +97,7 @@ main ul {
   margin-bottom: 1em;
 }
 
-main h2:not(:first-child) {
+main h2:not(:first-of-type) {
   padding-top: 1.5em;
 }
 
@@ -118,10 +119,13 @@ header {
   background-repeat: no-repeat;
   background-position: 60% 0;
   background-size: cover;
-  height: 100vh;
   padding: 30px 15px;
   display: flex;
   flex-direction: column;
+}
+
+.home .masthead {
+  height: 100vh;
 }
 
 .webp .masthead {
@@ -158,6 +162,19 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.flash-message {
+  display: none;
+  padding: 1em 1.5em;
+  color: white;
+  background-color: var(--green);
+  border-radius: var(--border-radius);
+}
+
+.flash-message:target {
+  display: block;
+  margin-bottom: 2em;
 }
 
 .message h1 {
@@ -223,6 +240,49 @@ footer .badges {
 
 footer p {
   margin-bottom: 0;
+}
+
+
+/*
+  * Form
+*/
+
+textarea,
+[type=email] {
+  width: 100%;
+  padding: .5em .75em;
+  font-size: .9em;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+[type=email] {
+  margin-bottom: 1em;
+}
+
+textarea {
+  margin-bottom: .5em;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  appearance: none;
+  transition: .6s background-color;
+  background-color: var(--green);
+  border-radius: var(--border-radius);
+  text-indent: 0;
+  display: inline-block;
+  color: white;
+  font-size: .9em;
+  line-height: 2;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  letter-spacing: 1.3px;
+  padding: .1em 1.5em;
 }
 
 @media screen and (min-width: 55em) {
