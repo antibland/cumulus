@@ -228,6 +228,10 @@ main {
   flex-grow: 1;
 }
 
+.contact main {
+  padding: 45px 30px;
+}
+
 main > section {
   margin-bottom: 30px;
 }
@@ -341,10 +345,6 @@ button {
   main {
     margin: 0 auto;
     padding: 90px;
-  }
-
-  .contact main {
-    padding: 30px 15px;
   }
 
   main > section {
