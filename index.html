@@ -12,11 +12,9 @@
 
     <header>
       <a class="logo" href="/">
-        <img srcset="
-          img/logo.png 1x,
-          img/logo@2x.png 2x,
-          img/logo@3x.png 3x
-        " alt="Cumulus logo">
+        <svg aria-hidden="true">
+          <use xlink:href="svg-defs.svg#svg-logo" />
+        </svg>
       </a>
 
       <nav role="main">
@@ -24,7 +22,13 @@
 <!--           <li class="nav-item"><a class="nav-link" href="#">My Process</a></li>
           <li class="nav-item"><a class="nav-link" href="#">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Request Quote</a></li> -->
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link svg-icon__email" href="#contact">
+              <svg>
+                <use xlink:href="svg-defs.svg#svg-email" />
+              </svg>
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -34,6 +38,28 @@
       <!-- <button class="flat">Show Me How</button> -->
     </div>
 
+  </section>
+
+  <section id="contact" class="content-wrapper modal" aria-hidden="true">
+    <form method="POST" action="//formspree.io/laura.gershman1@gmail.com" class="contact-form">
+      <h2>Contact Me</h2>
+      <input aria-label="your email" required autocapitalize="none" type="email" name="email" placeholder="Email">
+      <textarea aria-label="your message" required name="message" placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+      <a href="#close" class="cancel contact-cancel">Cancel</a>
+      <a aria-label="close modal" href="#close" class="cancel-x"><span>+</span></a>
+      <input type="hidden" name="_next" value="#thanks">
+    </form>
+  </section>
+
+  <section id="thanks" class="content-wrapper modal" aria-hidden="true">
+    <form method="POST" action="//formspree.io/laura.gershman1@gmail.com" class="contact-form">
+      <h2>Success</h2>
+      <div class="flash-message">
+        Message sent. I'll get back to you shortly.
+      </div>
+      <a aria-label="close modal" href="#close" class="cancel-x"><span>+</span></a>
+    </form>
   </section>
 
   <main>
@@ -117,6 +143,29 @@
       function notify(supported) {
         (supported) ? document.body.classList.add('webp') : document.body.classList.add('no-webp');
       }
+
+      function ally_showActiveSection() {
+        document.querySelectorAll('.content-wrapper').forEach(function(section) {
+          section.setAttribute('aria-hidden', true);
+          document.body.classList.remove('modal-opened');
+        });
+
+        if (location.hash &&
+            location.hash.indexOf('home') === -1 &&
+            document.querySelector(location.hash)) {
+          document.querySelector(location.hash).setAttribute('aria-hidden', false);
+          document.body.classList.add('modal-opened');
+        }
+      }
+
+      window.onload = function() {
+        if (location.hash) {
+          ally_showActiveSection()
+        }
+      }
+
+      window.onhashchange = ally_showActiveSection;
+
 
       testWebP(notify);
     })();
