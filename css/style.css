@@ -333,9 +333,6 @@ button {
   padding: 0px;
   width: 24px;
   height: 24px;
-  line-height: 24px;
-  display: block;
-  text-align: center;
   font-size: 24px;
   transform: rotate(-45deg);
   position: absolute;
@@ -343,6 +340,9 @@ button {
   right: -10px;
   color: white;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*
