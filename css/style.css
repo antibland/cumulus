@@ -143,8 +143,10 @@ header {
 }
 
 .masthead {
+  will-change: background-position;
+  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: 60% 0;
+  background-position: 50% 0;
   background-size: cover;
   padding: 30px 15px;
   width: 100%;
@@ -157,13 +159,13 @@ header {
 }
 
 .webp .masthead {
-  background-image: url('../img/bg.webp');
-  background-image: -webkit-image-set(url("../img/bg.webp") 1x, url("../img/bg@2x.webp") 2x);
+  background-image: url('../img/the_bg.webp');
+  background-image: -webkit-image-set(url("../img/the_bg.webp") 1x, url("../img/the_bg@2x.webp") 2x);
 }
 
 .no-webp .masthead {
-  background-image: url('../img/bg.jpg');
-  background-image: -webkit-image-set(url("../img/bg.jpg") 1x, url("../img/bg@2x.jpg") 2x);
+  background-image: url('../img/the_bg.jpg');
+  background-image: -webkit-image-set(url("../img/the_bg.jpg") 1x, url("../img/the_bg@2x.jpg") 2x);
 }
 
 [role='main'] ul {
@@ -194,14 +196,17 @@ header {
 }
 
 .message h1 {
-  color: var(--black);
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
   text-align: center;
   opacity: 0;
   transform: translateY(20px);
-  width: 80vmin;
-  font-size: 8vmin;
+  font-size: 300%;
   animation: .8s fade-in forwards .7s;
+  color: white;
+  text-shadow: 1px 2px 0 hsla(0, 0%, 0%, 0.9);
+  background: hsla(0, 0%, 100%, 0.2);
+  border-radius: var(--border-radius);
+  padding: .25em;
 }
 
 .flat {
@@ -336,8 +341,8 @@ button {
   font-size: 24px;
   transform: rotate(-45deg);
   position: absolute;
-  top: -8px;
-  right: -10px;
+  top: -7px;
+  right: -9px;
   color: white;
   font-weight: bold;
   display: flex;
@@ -380,9 +385,9 @@ button {
   * Media Queries
 */
 
-@media screen and (min-width: 57em) {
-  .logo {
-    left: 153px;
+@media screen and (min-width: 56em) {
+  .message h1 {
+    max-width: 50%;
   }
 }
 
@@ -456,6 +461,11 @@ button {
   form {
     padding: 4em;
   }
+
+  .message h1 {
+    font-size: 350%;
+    padding: .5em;
+  }
 }
 
 /*
@@ -501,10 +511,10 @@ only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi),
 only screen and (min-resolution: 2dppx) {
   .webp .masthead {
-    background-image: url("../img/bg@2x.webp");
+    background-image: url("../img/the_bg@2x.webp");
   }
 
   .no-webp .masthead {
-    background-image: url("../img/bg@2x.jpg");
+    background-image: url("../img/the_bg@2x.jpg");
   }
 }

@@ -25,10 +25,25 @@
     }
   }
 
+  function parallaxScrollListener(speed, range) {
+    var banner_offset, calc, fullscreen_container, y_offset, bg;
+
+    bg = document.querySelector('.masthead');
+    y_offset = window.scrollY;
+    fullscreen_container = document.body;
+    banner_offset = fullscreen_container.offsetTop + fullscreen_container.height / 2;
+    calc = 1 - (y_offset - banner_offset + range) / range;
+    bg.style.backgroundPosition = '50% ' +  -(y_offset * speed) + 'px';
+  }
+
   window.onload = function() {
     if (location.hash) {
       ally_showActiveSection()
     }
+  }
+
+  window.onscroll = function() {
+    parallaxScrollListener(.2, 350);
   }
 
   window.onhashchange = ally_showActiveSection;
