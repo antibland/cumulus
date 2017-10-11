@@ -330,7 +330,7 @@ button {
 .cancel-x {
   background-color: var(--black);
   border-radius: 50%;
-  padding: 0px;
+  padding: 0;
   width: 24px;
   height: 24px;
   font-size: 24px;
