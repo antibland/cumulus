@@ -201,7 +201,7 @@ header {
   transform: translateY(20px);
   width: 80vmin;
   font-size: 8vmin;
-  animation: .8s fade-in forwards .3s;
+  animation: .8s fade-in forwards .7s;
 }
 
 .flat {
