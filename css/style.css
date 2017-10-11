@@ -345,6 +345,11 @@ button {
   align-items: center;
 }
 
+.cancel-x > span {
+  position: relative;
+  top: -2px;
+}
+
 /*
   * Modal
 */
