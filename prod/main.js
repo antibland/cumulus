@@ -44,19 +44,19 @@
     }
   }
 
-  window.onscroll = function() {
+  window.addEventListener('scroll', function onScroll() {
     if (!window.USER_IS_TOUCHING) {
       parallaxScrollListener(.2, 350);
     }
-  }
+  });
 
   window.addEventListener('touchstart', function onFirstTouch() {
     window.USER_IS_TOUCHING = true;
     window.removeEventListener('touchstart', onFirstTouch, false);
+    window.removeEventListener('scroll', false);
   }, false);
 
   window.onhashchange = ally_showActiveSection;
-
 
   testWebP(notify);
 })();
