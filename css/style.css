@@ -333,13 +333,12 @@ button {
 }
 
 .cancel-x {
-  background-color: var(--black);
+  background-color: white;
   border-radius: 50%;
   padding: 0;
   width: 24px;
   height: 24px;
   font-size: 24px;
-  transform: rotate(-45deg);
   position: absolute;
   top: -7px;
   right: -9px;
@@ -350,9 +349,9 @@ button {
   align-items: center;
 }
 
-.cancel-x > span {
-  position: relative;
-  top: -2px;
+.cancel-x > svg {
+  fill: var(--black);
+  max-height: 100%;
 }
 
 /*
