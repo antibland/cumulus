@@ -43,8 +43,15 @@
   }
 
   window.onscroll = function() {
-    parallaxScrollListener(.2, 350);
+    if (!window.USER_IS_TOUCHING) {
+      parallaxScrollListener(.2, 350);
+    }
   }
+
+  window.addEventListener('touchstart', function onFirstTouch() {
+    window.USER_IS_TOUCHING = true;
+    window.removeEventListener('touchstart', onFirstTouch, false);
+  }, false);
 
   window.onhashchange = ally_showActiveSection;
 
