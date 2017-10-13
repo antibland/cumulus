@@ -215,8 +215,8 @@ header {
   font-weight: normal;
   color: white;
   display: block;
-  text-shadow: 0 0 2px hsla(0,0%,40%,1);
-  font-size: 75%;
+  text-shadow: 0 1px 5px hsla(0,0%,30%,1);
+  font-size: 72%;
 }
 
 .flat {
