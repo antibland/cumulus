@@ -112,6 +112,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 15px;
 }
 
 .logo {
@@ -148,7 +149,7 @@ header {
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  padding: 30px 15px;
+  padding: 30px 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -206,7 +207,9 @@ header {
   text-shadow: 1px 1px 0 hsla(0, 0%, 0%, 0.9);
   background: hsla(0, 0%, 100%, 0.2);
   border-radius: var(--border-radius);
-  padding: .25em;
+  padding: .5em;
+  top: -10px;
+  position: relative;
 }
 
 .flat {
@@ -386,7 +389,7 @@ button {
 
 @media screen and (min-width: 56em) {
   .message h1 {
-    max-width: 50%;
+    max-width: 60%;
   }
 }
 
@@ -406,7 +409,7 @@ button {
   }
 
   .nav-link {
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
   .masthead {
@@ -439,10 +442,6 @@ button {
     grid-area: long-message;
   }
 
-  .masthead {
-    padding: 30px;
-  }
-
   footer {
     flex-direction: row;
     padding: 30px 90px;
@@ -463,7 +462,6 @@ button {
 
   .message h1 {
     font-size: 350%;
-    padding: .5em;
   }
 }
 
