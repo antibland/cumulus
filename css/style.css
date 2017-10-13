@@ -201,15 +201,22 @@ header {
   text-align: center;
   opacity: 0;
   transform: translateY(20px);
-  font-size: 300%;
+  font-size: 260%;
   animation: .8s fade-in forwards .7s;
-  color: white;
-  text-shadow: 1px 1px 0 hsla(0, 0%, 0%, 0.9);
-  background: hsla(0, 0%, 100%, 0.2);
+  color: var(--black);
+  background: hsla(0, 0%, 100%, 0.15);
   border-radius: var(--border-radius);
   padding: .5em;
-  top: -10px;
   position: relative;
+  font-weight: bold;
+}
+
+.message span {
+  font-weight: normal;
+  color: white;
+  display: block;
+  text-shadow: 0 0 2px hsla(0,0%,40%,1);
+  font-size: 75%;
 }
 
 .flat {
@@ -389,7 +396,7 @@ button {
 
 @media screen and (min-width: 56em) {
   .message h1 {
-    max-width: 60%;
+    max-width: 65%;
   }
 }
 
@@ -462,6 +469,7 @@ button {
 
   .message h1 {
     font-size: 350%;
+    top: -10px;
   }
 }
 
