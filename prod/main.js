@@ -35,7 +35,7 @@
     fullscreen_container = document.body;
     banner_offset = fullscreen_container.offsetTop + fullscreen_container.height / 2;
     calc = 1 - (y_offset - banner_offset + range) / range;
-    bg.style.backgroundPosition = '50% ' +  -(y_offset * speed) + 'px';
+    bg.style.backgroundPosition = '50% calc(50% + ' +  -(y_offset * speed) + 'px' + ')';
   }
 
   window.onload = function() {
