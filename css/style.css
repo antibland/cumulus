@@ -138,7 +138,13 @@ header {
   transition: 0.5s color, 0.5s transform;
 }
 
-.svg-icon__email:hover svg {
+.svg-icon__email:hover,
+.svg-icon__email:focus {
+  outline: none;
+}
+
+.svg-icon__email:hover svg,
+.svg-icon__email:focus svg {
   color: var(--black);
   transform: rotate(-5deg);
 }
