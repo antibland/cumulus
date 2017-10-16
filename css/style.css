@@ -481,6 +481,7 @@ button {
   and (-webkit-min-device-pixel-ratio: 1) {
     .masthead {
       background-size: auto 100vh;
+      background-position: 50% 0;
     }
 }
 
