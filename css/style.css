@@ -296,9 +296,12 @@ footer p {
 
 .badges img {
   display: block;
+  margin-bottom: 15px;
 }
 
-.badges > *:not(:last-child) {
+.badges .block.column {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 15px;
 }
 
@@ -520,6 +523,21 @@ button {
   .message h1 {
     font-size: 400%;
     top: -10px;
+  }
+
+  .badges {
+    flex-direction: row;
+  }
+
+  .badges .block.column {
+    justify-content: space-evenly;
+    height: 150px;
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+
+  .badges img {
+    margin-bottom: 0;
   }
 }
 
