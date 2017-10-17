@@ -278,12 +278,28 @@ footer {
   text-align: center;
   display: flex;
   flex-direction: column-reverse;
+  justify-content: space-around;
 }
 
-footer .badges {
+footer .badges,
+footer p {
+  flex-grow: 1;
+}
+
+.badges {
   padding-bottom: 1em;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.badges img {
+  display: block;
+}
+
+.badges > *:not(:last-child) {
+  margin-bottom: 15px;
 }
 
 footer p {
