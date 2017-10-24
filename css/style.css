@@ -317,7 +317,7 @@ footer p {
 
 form {
   position: relative;
-  max-width: calc(100% - 2em);
+  max-width: calc(100% - 3em);
   padding: 2em;
   border-radius: var(--border-radius);
   background-color: hsla(210, 48%, 59%, .6);
