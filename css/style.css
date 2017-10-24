@@ -420,7 +420,7 @@ button {
 .full.modal .inner,
 .full.modal .content {
   width: 650px;
-  max-width: calc(100% - 2em);
+  max-width: calc(100% - 3em);
 }
 
 .full.modal .inner {
