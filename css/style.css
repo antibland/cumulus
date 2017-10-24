@@ -468,7 +468,7 @@ button {
 
 .no-webp #about .content {
   background-image: url('../img/laura_full.jpg');
-  background-image: -webkit-image-set(url("../img/laura_full.jpg") 1x, url("../img/laura_full2x.jpg") 2x);
+  background-image: -webkit-image-set(url("../img/laura_full.jpg") 1x, url("../img/laura_full@2x.jpg") 2x);
 }
 
 /*
