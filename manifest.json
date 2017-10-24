@@ -1,5 +1,6 @@
 {
-    "name": "Cumulus",
+    "name": "Cumulus Bookkeeper",
+    "short_name": "Cumulus",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

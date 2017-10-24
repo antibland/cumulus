@@ -377,7 +377,7 @@ button {
   font-size: 24px;
   position: absolute;
   top: -7px;
-  right: -9px;
+  right: -8px;
   color: white;
   font-weight: bold;
   display: flex;
@@ -389,6 +389,7 @@ button {
 .cancel-x > svg {
   fill: var(--black);
   max-height: 100%;
+  transform: scale(2);
 }
 
 /*
@@ -440,6 +441,34 @@ button {
 .modal:target {
   opacity: 1;
   visibility: visible;
+}
+
+/*
+  * About
+*/
+
+#about .content {
+  max-height: 29em;
+  padding-right: 1em;
+  background-position: 35% 0;
+  background-repeat: no-repeat;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#about .content > * {
+  margin-left: 50%;
+  color: hsla(0, 0%, 100%, 0.9);
+}
+
+.webp #about .content {
+  background-image: url('../img/laura_full.webp');
+  background-image: -webkit-image-set(url("../img/laura_full.webp") 1x, url("../img/laura_full@2x.webp") 2x);
+}
+
+.no-webp #about .content {
+  background-image: url('../img/laura_full.jpg');
+  background-image: -webkit-image-set(url("../img/laura_full.jpg") 1x, url("../img/laura_full2x.jpg") 2x);
 }
 
 /*
@@ -538,6 +567,14 @@ button {
 
   .badges img {
     margin-bottom: 0;
+  }
+
+  #about .content {
+    padding-right: 3em;
+  }
+
+  #about .content > * {
+    margin-left: 56%;
   }
 }
 
