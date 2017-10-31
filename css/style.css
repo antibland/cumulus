@@ -32,6 +32,11 @@ body.modal-opened {
   overflow: hidden;
 }
 
+body.modal-opened .message h1 {
+  opacity: 0;
+  visibility: hidden;
+}
+
 li {
   list-style: none;
   position: relative;
@@ -215,13 +220,12 @@ header {
   padding: .5em;
   position: relative;
   font-weight: bold;
+  transition: .5s opacity;
 }
 
 .message span {
   font-weight: normal;
-  color: white;
   display: block;
-  text-shadow: 0 1px 5px hsla(0,0%,30%,1);
   font-size: 72%;
 }
 
@@ -453,7 +457,7 @@ button {
   transition: opacity 0.4s 0.1s ease-in,
               visibility 0.4s 0.1s ease-in,
               transform 0.4s 0.1s ease-in;
-  background-color: hsla(0, 0%, 100%, 0.9);
+  background-color: hsla(0, 0%, 100%, 0.6);
   justify-content: center;
   align-items: center;
 }
@@ -504,7 +508,7 @@ button {
 
 .modal.page header {
   z-index: 1;
-  padding: 2em;
+  padding: 3.5em 2em;
   position: fixed;
   width: 100vw;
   box-shadow: 0 4px 15px 0 hsla(0, 0%, 0%, 0.1);
@@ -516,7 +520,7 @@ button {
 }
 
 .modal.page .content {
-  padding: 9em 2em 3em;
+  padding: 12em 2em 3em;
 }
 
 .modal.page section {
@@ -653,7 +657,8 @@ button {
   }
 
   .modal.page .content {
-    padding: 10em 4em 3em;
+    padding-right: 2em;
+    padding-left: 2em;
   }
 
   .message h1 {
