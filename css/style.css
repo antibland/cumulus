@@ -220,7 +220,7 @@ header {
   padding: .5em;
   position: relative;
   font-weight: bold;
-  transition: .5s opacity;
+  transition: .5s opacity, .2s;
 }
 
 .message span {
@@ -534,6 +534,22 @@ button {
 }
 
 /*
+  * Modal page -- Services
+*/
+
+.services-title {
+  will-change: transform, opacity;
+  transition: .5s .2s;
+  transform: translateX(-200px);
+  opacity: .5;
+}
+
+.modal-opened  .services-title {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/*
   * About
 */
 
@@ -575,12 +591,11 @@ button {
   }
 
   .modal.page section:first-child {
-    padding-right: 1em;
     padding-bottom: 0;
   }
 
-  .modal.page section:last-child {
-    padding-left: 1em;
+  .modal.page section:nth-child(2) {
+    padding: 0 2em;
   }
 }
 
@@ -663,7 +678,7 @@ button {
 
   .message h1 {
     font-size: 400%;
-    top: -10px;
+    top: -50px;
   }
 
   .badges {
