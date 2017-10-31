@@ -1,7 +1,17 @@
 @keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
   }
 }
 
@@ -33,8 +43,7 @@ body.modal-opened {
 }
 
 body.modal-opened .message h1 {
-  opacity: 0;
-  visibility: hidden;
+  animation: .8s fade-out forwards .3s;
 }
 
 li {
@@ -122,6 +131,7 @@ header {
 
 .logo {
   position: relative;
+  left: 20px;
 }
 
 .logo svg {
@@ -210,7 +220,6 @@ header {
 .message h1 {
   margin-bottom: 30px !important;
   text-align: center;
-  opacity: 0;
   transform: translateY(20px);
   font-size: 260%;
   animation: .8s fade-in forwards .7s;
