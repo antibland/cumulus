@@ -69,7 +69,7 @@ p, main li, .content-wrapper li {
   line-height: 1.65;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -79,14 +79,13 @@ h1 {
 
 h2 {
   margin-bottom: 30px;
-  font-size: 28px;
+  font-size: 34px;
   color: var(--black);
 }
 
 h3 {
   margin-bottom: 20px;
-  color: var(--green);
-  font-size: 24px;
+  font-size: 28px;
 }
 
 a:link,
