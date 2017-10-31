@@ -27,7 +27,19 @@
     }
   }
 
-  function parallaxScrollListener(speed, range) {
+  function checkVisible(elm, threshold, mode) {
+    threshold = threshold || 0;
+    mode = mode || 'visible';
+
+    var rect = elm.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    var above = rect.bottom - threshold < 0;
+    var below = rect.top - viewHeight + threshold >= 0;
+
+    return mode === 'above' ? above : (mode === 'below' ? below : !above && !below);
+  }
+
+  var parallaxScrollListener = function(speed, range) {
     var banner_offset, calc, fullscreen_container, y_offset, bg;
 
     bg = document.querySelector('.masthead');
@@ -36,6 +48,15 @@
     banner_offset = fullscreen_container.offsetTop + fullscreen_container.height / 2;
     calc = 1 - (y_offset - banner_offset + range) / range;
     bg.style.backgroundPosition = '50% calc(50% + ' +  -(y_offset * speed) + 'px' + ')';
+  }
+
+  var revealQuoteInView = function () {
+    var pq = document.getElementsByClassName('pull-quote')[0];
+
+    if (checkVisible(pq, 70)) {
+      pq.classList.add('show');
+      window.removeEventListener('scroll', revealQuoteInView, false);
+    }
   }
 
   window.onload = function() {
@@ -48,7 +69,9 @@
     if (!window.USER_IS_TOUCHING) {
       parallaxScrollListener(.2, 350);
     }
-  });
+  }, false);
+
+  window.addEventListener('scroll', revealQuoteInView, false);
 
   window.addEventListener('touchstart', function onFirstTouch() {
     window.USER_IS_TOUCHING = true;

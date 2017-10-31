@@ -8,6 +8,7 @@
 :root {
   --black: hsl(0, 0%, 21%);
   --green: hsl(210, 48%, 59%);
+  --beige: hsl(21, 40%, 81%);
   --border-radius: 4px;
 }
 
@@ -60,8 +61,7 @@ svg {
   top: .1em;
 }
 
-
-p, main li {
+p, main li, .content-wrapper li {
   margin-bottom: 20px;
   font-size: 1.15rem;
   font-weight: 400;
@@ -268,6 +268,52 @@ main > section {
   margin-bottom: 30px;
 }
 
+.pull-quote {
+  width: 100%;
+  display: block;
+  background: white;
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  position: relative;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: .75s opacity .2s, .75s transform .2s;
+}
+
+.pull-quote.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pull-quote > q {
+  line-height: 1.5;
+  display: inline-block;
+  padding: 1.2em;
+  font-style: italic;
+  margin: 0 auto;
+  background: white;
+  width: 90%;
+  font-size: 120%;
+  text-align: left;
+  background-color: hsla(210, 48%, 59%, .05);
+  border-radius: var(--border-radius);
+  -webkit-font-smoothing: antialiased;
+}
+
+.pull-quote > q::before,
+.pull-quote > q::after {
+  content: normal;
+}
+
+.pull-quote > q::first-letter {
+  font-weight: bold;
+  font-size: 160%;
+  line-height: .8;
+}
+
+
+
 /*
   * Footer
 */
@@ -408,26 +454,26 @@ button {
   transition: opacity 0.4s 0.1s ease-in,
               visibility 0.4s 0.1s ease-in,
               transform 0.4s 0.1s ease-in;
-  background-color: hsla(0, 0%, 100%, 0.8);
+  background-color: hsla(0, 0%, 100%, 0.9);
   justify-content: center;
   align-items: center;
 }
 
-.full.modal {
+.modal.full {
   flex-direction: column;
 }
 
-.full.modal .inner,
-.full.modal .content {
+.modal.full .inner,
+.modal.full .content {
   width: 650px;
   max-width: calc(100% - 3em);
 }
 
-.full.modal .inner {
+.modal.full .inner {
   position: relative;
 }
 
-.full.modal .content {
+.modal.full .content {
   padding: 2em 3em 2em 2em;
   max-height: 91vh;
   position: relative;
@@ -441,6 +487,47 @@ button {
 .modal:target {
   opacity: 1;
   visibility: visible;
+}
+
+/*
+  * Modal page
+*/
+
+.modal.page {
+  display: block;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal.page h2 {
+  margin-bottom: 0;
+}
+
+.modal.page header {
+  z-index: 1;
+  padding: 2em;
+  position: fixed;
+  width: 100vw;
+  box-shadow: 0 4px 15px 0 hsla(0, 0%, 0%, 0.1);
+  background-color: var(--beige);
+}
+
+.modal.page ul {
+  padding-left: 2em;
+}
+
+.modal.page .content {
+  padding: 9em 2em 3em;
+}
+
+.modal.page section {
+  margin-bottom: 2em;
+}
+
+.modal.page .cancel-x {
+  top: 0;
+  right: 0;
+  position: relative;
 }
 
 /*
@@ -479,12 +566,29 @@ button {
   .message h1 {
     max-width: 65%;
   }
+
+  .modal.page .content {
+    display: flex;
+  }
+
+  .modal.page section:first-child {
+    padding-right: 1em;
+    padding-bottom: 0;
+  }
+
+  .modal.page section:last-child {
+    padding-left: 1em;
+  }
 }
 
 
 @media screen and (min-width: 50em) {
   body {
     margin: 0 auto;
+  }
+
+  .pull-quote > q {
+    width: 50%;
   }
 
   [role='main'] {
@@ -549,6 +653,10 @@ button {
     padding: 3em 2em;
   }
 
+  .modal.page .content {
+    padding: 10em 4em 3em;
+  }
+
   .message h1 {
     font-size: 400%;
     top: -10px;
@@ -598,7 +706,12 @@ button {
   /*
     --black: hsl(0, 0%, 21%);
     --green: hsl(210, 48%, 59%);
+    --beige: hsl(21, 40%, 81%);
   */
+
+  .modal.page header {
+    background-color: hsl(21, 40%, 81%);
+  }
 
   .cancel-x {
     background-color: hsl(0, 0%, 21%);
