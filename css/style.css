@@ -534,6 +534,7 @@ button {
 
 .modal.page section {
   margin-bottom: 2em;
+  flex: 1;
 }
 
 .modal.page .cancel-x {
