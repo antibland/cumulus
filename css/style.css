@@ -46,6 +46,12 @@ body.modal-opened .message h1 {
   animation: .8s fade-out forwards .3s;
 }
 
+.svg-icon__email:focus,
+a:focus {
+  outline: 1px solid;
+  outline-offset: .15em;
+}
+
 li {
   list-style: none;
   position: relative;
@@ -151,11 +157,6 @@ header {
   max-width: 50px;
   color: white;
   transition: 0.5s color, 0.5s transform;
-}
-
-.svg-icon__email:hover,
-.svg-icon__email:focus {
-  outline: none;
 }
 
 .svg-icon__email:hover svg,
@@ -352,6 +353,10 @@ footer p {
   align-items: center;
 }
 
+.badges > * {
+  margin-bottom: 15px;
+}
+
 .badges img {
   display: block;
   margin-bottom: 15px;
@@ -360,7 +365,6 @@ footer p {
 .badges .block.column {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
 }
 
 footer p {
@@ -591,6 +595,19 @@ button {
   * Media Queries
 */
 
+@media screen and (min-width: 65em) {
+  footer {
+    flex-direction: row;
+    padding: 30px 90px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .badges {
+    padding-bottom: 0;
+  }
+}
+
 @media screen and (min-width: 56em) {
   .message h1 {
     max-width: 65%;
@@ -606,6 +623,15 @@ button {
 
   .modal.page section:nth-child(2) {
     padding: 0 2em;
+  }
+
+  .badges .block.column {
+    justify-content: space-evenly;
+    height: 150px;
+  }
+
+  .badges img {
+    margin-bottom: 0;
   }
 }
 
@@ -662,17 +688,6 @@ button {
   .long-message {
     grid-area: long-message;
   }
-
-  footer {
-    flex-direction: row;
-    padding: 30px 90px;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  footer .badges {
-    padding-bottom: 0;
-  }
 }
 
 
@@ -691,27 +706,21 @@ button {
     top: -50px;
   }
 
-  .badges {
-    flex-direction: row;
-  }
-
-  .badges .block.column {
-    justify-content: space-evenly;
-    height: 150px;
-    margin-bottom: 0;
-    margin-right: 15px;
-  }
-
-  .badges img {
-    margin-bottom: 0;
-  }
-
   #about .content {
     padding-right: 3em;
   }
 
   #about .content > * {
     margin-left: 56%;
+  }
+
+  .badges {
+    flex-direction: row;
+  }
+
+  .badges > * {
+    margin-bottom: 0;
+    margin-right: 25px;
   }
 }
 
