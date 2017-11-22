@@ -472,6 +472,7 @@ button {
   background: hsla(0,0%,100%,.15);
   padding: 1em;
   box-shadow: 0 11px 8px -8px rgba(0, 0, 0, .4);
+  border-radius: var(--border-radius);
 }
 
 #contact-header {
@@ -639,8 +640,13 @@ li.oddball {
   width: 100%;
 }
 
+.standout p:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
 .standout p:last-child {
   box-shadow: 0 11px 8px -8px rgba(0, 0, 0, .4);
+  border-radius: 0 0 4px 4px;
 }
 
 /*
