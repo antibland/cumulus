@@ -207,6 +207,8 @@ header {
   text-align: center;
   display: flex;
   align-items: center;
+  opacity: 0;
+  animation: .8s fade-in forwards .7s;
 }
 
 .nav-link.active {
