@@ -40,6 +40,8 @@ body {
 
 body.modal-opened {
   overflow: hidden;
+  position: fixed;
+  width: 100vw;
 }
 
 body.modal-opened .message h1 {
