@@ -556,13 +556,10 @@ button {
 .modal.page header {
   z-index: 1;
   padding: 2em;
-  position: fixed;
   top: 0;
   width: 100vw;
   box-shadow: 0 1px 2px 0 hsla(0, 0%, 0%, 0.2);
   background-color: var(--green);
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 .modal.page ul {
@@ -570,7 +567,7 @@ button {
 }
 
 .modal.page .content {
-  padding: 15em 2em 3em;
+  padding: 2em;
 }
 
 .modal.page section {
@@ -810,10 +807,6 @@ li.oddball {
 
   .modal.page header {
     padding: 3.5em 2em;
-  }
-
-  .modal.page .content {
-    padding-top: 14em;
   }
 
   .standout p {
