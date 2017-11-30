@@ -48,6 +48,10 @@ body.modal-opened .message h1 {
   animation: .8s fade-out forwards .3s;
 }
 
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
 .nav-link.svg-icon__email:focus,
 a:focus {
   outline: 1px solid;
