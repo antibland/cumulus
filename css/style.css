@@ -678,7 +678,7 @@ button {
   align-items: center;
 }
 
-.modal-header-wrapper .svg-icon__email {
+.modal-header-wrapper .svg-icon {
   background-color: hsla(0,0%,100%,.15);
   display: inline-flex;
   padding: 0.5em 0.75em;
@@ -687,17 +687,19 @@ button {
   transform: translateY(0) translateZ(0);
 }
 
-.modal-header-wrapper .svg-icon__email:hover,
-.modal-header-wrapper .svg-icon__email:focus {
+.modal-header-wrapper .svg-icon:hover,
+.modal-header-wrapper .svg-icon:focus {
   box-shadow: 0 11px 7px -7px rgba(0, 0, 0, .5);
   transform: translateY(-1px) translateZ(0);
 }
 
-.modal-header-wrapper .svg-icon__email svg {
-  min-width: 30px;
-  width: 30px;
-  height: 30px;
-  padding-right: 8px;
+.modal-header-wrapper .svg-icon svg {
+  min-width: 23px;
+  width: 23px;
+  height: 23px;
+  margin-right: 13px;
+  position: relative;
+  top: -1px;
 }
 
 li.oddball {
