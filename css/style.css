@@ -52,7 +52,6 @@ img {
   image-rendering: -webkit-optimize-contrast;
 }
 
-.nav-link.svg-icon__email:focus,
 a:focus {
   outline: 1px solid;
   outline-offset: .15em;
@@ -123,18 +122,21 @@ h3 {
 }
 
 main h3:not(:first-child) {
-  padding-top: 60px;
+  padding-top: 120px;
   position: relative;
 }
 
 main h3:not(:first-child)::before {
   position: absolute;
   content: '';
-  margin: 20px 0;
+  margin: 50px 0;
   height: 1px;
   top: 0.3em;
   width: 100%;
   background: linear-gradient(to right,rgba(0,0,0,0),#333,rgba(0,0,0,0));
+  max-width: 75vw;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 a:link,
@@ -181,21 +183,6 @@ header {
   pointer-events: none;
 }
 
-.nav-link.svg-icon__email svg {
-  display: none;
-  padding-left: 10px;
-  max-height: 50px;
-  max-width: 50px;
-  color: white;
-  transition: 0.5s color, 0.5s transform;
-}
-
-.nav-link.svg-icon__email:hover svg,
-.nav-link.svg-icon__email:focus svg {
-  color: var(--black);
-  transform: rotate(-5deg);
-}
-
 .masthead {
   will-change: background-position;
   background-attachment: fixed;
@@ -222,9 +209,10 @@ header {
   background-image: -webkit-image-set(url("/img/the_bg.jpg") 1x, url("/img/the_bg@2x.jpg") 2x);
 }
 
-[role='main'] ul {
+.nav-items {
   display: flex;
   flex-direction: column;
+  opacity: 1;
 }
 
 .nav-link {
@@ -242,6 +230,54 @@ header {
 
 .nav-link.active {
   border: 1px solid var(--black);
+}
+
+.social-items {
+  padding-right: 10px;
+  padding-top: .5em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  padding: 1.5em 0 0 15px;
+}
+
+.social-item a {
+  padding-right: 10px;
+  color: var(--black);
+}
+
+.social-item a:focus {
+  outline: none;
+}
+
+.social-item img,
+.social-item svg {
+  will-change: transform, box-shadow;
+  transform: translateY(0);
+  box-shadow: 0 13px 10px -10px rgba(0,0,0,0.4);
+  transition: .3s box-shadow, .3s transform;
+}
+
+.social-item svg {
+  height: 36px;
+  width: 36px;
+  color: currentColor;
+}
+
+.social-item a:hover svg,
+.social-item a:focus svg,
+.social-item a:hover img,
+.social-item a:focus img {
+  transform: translateY(-2px);
+  box-shadow:0 23px 12px -12px rgba(0,0,0,.2);
+}
+
+.social-item img {
+  background-color: rgba(0,0,0,.7);
+  padding: .4em .8em .3em;
+  border-radius: var(--border-radius);
 }
 
 .message {
@@ -605,10 +641,11 @@ button {
   position: relative;
   padding: 2em 1em 2em;
   text-align: center;
-  margin-bottom: 2em;
   background-color: #f3f3f3;
   border-radius: var(--border-radius);
   border: 1px solid hsla(0, 0%, 46.7%, .5);
+  margin: 0 auto 2em;
+  max-width: 75vw;
 }
 
 .contact-content-paragraph::after,
@@ -754,6 +791,10 @@ li.oddball {
   color: hsla(0, 0%, 100%, 0.9);
 }
 
+#about .content p:last-child {
+  padding-bottom: 2em;
+}
+
 .webp #about .content {
   background-image: url('/img/laura_full.webp');
   background-image: -webkit-image-set(url("../img/laura_full.webp") 1x, url("../img/laura_full@2x.webp") 2x);
@@ -782,6 +823,10 @@ li.oddball {
 }
 
 @media screen and (min-width: 56em) {
+  form.contact-form {
+    margin-right: auto !important;
+  }
+
   .message h2 {
     max-width: 65%;
   }
@@ -810,6 +855,7 @@ li.oddball {
 
   .contact-content-paragraph {
     margin-right: 2em;
+    max-width: none;
   }
 
   .contact-content-paragraph:before,
@@ -846,14 +892,20 @@ li.oddball {
     flex: 1;
   }
 
-  [role='main'] ul {
+  .nav-items {
     justify-content: flex-end;
     flex-direction: row !important;
     align-items: center;
   }
 
-  .nav-link.svg-icon__email svg {
-    display: block;
+  .social-items {
+    position: static;
+    padding: 1em 10px 0 0;
+  }
+
+  .social-item a {
+    margin-left: 1em;
+    padding-right: 0;
   }
 
   .nav-link {
@@ -902,6 +954,10 @@ li.oddball {
 
   .standout p {
     width: 50%;
+  }
+
+  .contact-content-paragraph {
+    max-width: 50vw;
   }
 }
 
@@ -972,14 +1028,6 @@ li.oddball {
     background-color: hsl(0, 0%, 21%);
   }
 
-  .nav-link.svg-icon__email:hover {
-    color: hsl(0, 0%, 21%);
-  }
-  .nav-link.svg-icon__email:hover svg,
-  .nav-link.svg-icon__email:focus svg {
-    color: hsl(0, 0%, 21%);
-  }
-
   .nav-link.active {
     border: 1px solid hsl(0, 0%, 21%);
   }
@@ -998,6 +1046,10 @@ li.oddball {
   }
 
   .standout p {
+    color: hsl(0, 0%, 21%);
+  }
+
+  .social-item a {
     color: hsl(0, 0%, 21%);
   }
 }
