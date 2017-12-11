@@ -662,8 +662,16 @@ button {
 }
 
 .contact-content-paragraph::before {
-  border-top: 21px solid hsla(0, 0%, 46.7%, .5);
+  border-top: 20px solid hsla(0, 0%, 46.7%, .5);
   top: calc(100% + 1px);
+}
+
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+    .contact-content-paragraph::before {
+      top: calc(100% + 2px);
+    }
+  }
 }
 
 .contact-content-paragraph::after {
@@ -868,7 +876,15 @@ li.oddball {
     left: calc(100% + 1px);
     top: 50%;
     transform: translateY(-50%);
-    border-left: 21px solid hsla(0, 0%, 46.7%, .5);
+    border-left: 20px solid hsla(0, 0%, 46.7%, .5);
+  }
+
+  @media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+      .contact-content-paragraph::before {
+        left: calc(100% + 2px);
+      }
+    }
   }
 
   .contact-content-paragraph::after {
