@@ -413,7 +413,7 @@ footer p {
 }
 
 .badges {
-  padding-bottom: 1em;
+  padding-bottom: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -441,7 +441,7 @@ footer p {
 
 footer .social-items {
   display: inline-flex;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 
