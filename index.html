@@ -13,10 +13,10 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
   <noscript><link rel="stylesheet" href="prod/style.css"></noscript>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111006893-1"></script>
+  <script async src="prod/vendor.lazysizes.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -56,7 +56,7 @@
         <ul class="social-items">
           <li class="social-item">
             <a href="https://www.alignable.com/portland-or/cumulus-bookkeeping-solutions" rel="noopener">
-              <img alt="Alignable logo." title="Recommended by Locals On Alignable" src="img/alignable.png">
+              <img alt="Alignable logo." src="img/alignable.png">
             </a>
           </li>
           <li class="social-item">
@@ -308,7 +308,7 @@
       <ul class="social-items">
           <li class="social-item">
             <a href="https://www.alignable.com/portland-or/cumulus-bookkeeping-solutions" rel="noopener">
-              <img alt="Alignable logo." title="Recommended by Locals On Alignable" src="img/alignable.png">
+              <img class="lazyload" alt="Alignable logo." data-src="img/alignable.png">
             </a>
           </li>
           <li class="social-item">
@@ -329,20 +329,20 @@
     </div>
     <div class="badges">
       <div class="block column">
-        <img srcset="img/HDCertification-Partner@2x.png 2x" src="img/HDCertification-Partner.png" width="200" height="57" alt="Hubdoc Partner badge">
-        <img srcset="img/HDCertification-QBO@2x.png 2x" src="img/HDCertification-QBO.png" width="200" height="57" alt="Hubdoc Certified QBO ProdAdvisor">
+        <img class="lazyload" data-srcset="img/HDCertification-Partner@2x.png 2x" data-src="img/HDCertification-Partner.png" width="200" height="57" alt="Hubdoc Partner badge">
+        <img class="lazyload" data-srcset="img/HDCertification-QBO@2x.png 2x" data-src="img/HDCertification-QBO.png" width="200" height="57" alt="Hubdoc Certified QBO ProdAdvisor">
       </div>
 
       <a rel="noopener" href="https://patriotsoftware.com/?pc=R88252&utm_source=cumulusbookkeepingsolutions&utm_medium=badge&utm_content=advisor&utm_campaign=royalty_program" title="Payroll and Accounting Software">
         <picture>
-          <source type="image/webp" srcset="img/advisor.webp 1x">
-          <img src="img/advisor.png" width="120px" alt="Patriot Software Accounting Advisor" title="Patriot Software Accounting Advisor">
+          <source type="image/webp" data-srcset="img/advisor.webp 1x">
+          <img class="lazyload" data-src="img/advisor.png" width="120px" alt="Patriot Software Accounting Advisor" title="Patriot Software Accounting Advisor">
         </picture>
       </a>
 
       <picture>
-        <source type="image/webp" srcset="img/quickbooks_badge.webp 1x, img/quickbooks_badge@2x.webp 2x">
-        <img src="img/quickbooks_badge.jpg" srcset="img/quickbooks_badge@2x.jpg 2x" alt="Quickbooks badge">
+        <source type="image/webp" data-srcset="img/quickbooks_badge.webp 1x, img/quickbooks_badge@2x.webp 2x">
+        <img class="lazyload" data-src="img/quickbooks_badge.jpg" data-srcset="img/quickbooks_badge@2x.jpg 2x" alt="Quickbooks badge">
       </picture>
     </div>
   </footer>
