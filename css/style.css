@@ -513,6 +513,7 @@ textarea,
   font-size: .9em;
   border-radius: var(--border-radius);
   border: none;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 [type=email] {
