@@ -71,7 +71,10 @@
     }
   }, false);
 
-  window.addEventListener('scroll', revealQuoteInView, false);
+  if (document.body.className === 'home') {
+    window.addEventListener('scroll', revealQuoteInView, false);
+  }
+
 
   window.addEventListener('touchstart', function onFirstTouch() {
     window.USER_IS_TOUCHING = true;
