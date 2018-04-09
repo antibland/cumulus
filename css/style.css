@@ -28,6 +28,14 @@
   box-sizing: border-box;
 }
 
+.masthead h1{
+  position: absolute;
+  overflow:hidden;clip:
+  rect(1px 1px 1px 1px);
+  height:1px;
+  width:1px
+}
+
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -114,9 +122,9 @@ p, main li, .content-wrapper li {
   line-height: 1.65;
 }
 
-h1, h2, h3 {
+/* h1, h2, h3 {
   font-family: 'Josefin Sans', sans-serif;
-}
+} */
 
 h1 {
   font-size: 50px;
@@ -315,7 +323,7 @@ header {
   animation: .8s fade-in forwards .7s;
   color: white;
   position: relative;
-  font-weight: bold;
+  font-weight: normal;
   transition: .5s opacity, .2s;
 }
 
